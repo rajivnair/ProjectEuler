@@ -10,11 +10,13 @@ sub is_palindrome{
     else{
 	return false;
     }
-
 }
 
 for $x (101 .. 999){
     for $y (101 .. 999){
+	
+	# Optimization: Numbers should be divisible by 11
+	# Thanks to Begoner@projecteuler
 	if(($y % 11 == 0) || ($x % 11 == 0)){
 	    $prod=$x*$y;	
 	    if(is_palindrome($prod) eq true){
@@ -22,8 +24,7 @@ for $x (101 .. 999){
 		    $max=$prod;
 		}
 	    }
-	}
-	
+	}	
     }
 }
 print "$max\n";
